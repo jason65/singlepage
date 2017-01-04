@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>检测数字的输入</title>
+    <meta name="author" content="" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+</head>
+
+<body>
+    <h1>检测数字的输入</h1>
+    <p><span>能控制小数点后的位数最多为2位</span>
+        <input type="text" name="name" value=""  onkeyup="checkAgain(this,event)" />
+    </p>
+    <script type="text/javascript">
+    function checkNum(obj) {
+    	//如果不为空，且检查到已经有小数点
+        // if (obj != null&&obj.value.toString().split(".").length > 1) {
+        //     //检查小数点后的数字长度大于2
+        //     console.log(obj.value.toString().split(".")[1].length)
+        //     if (obj.value.toString().split(".")[1].length > 1) {
+                
+        //         obj.value = obj.value.substr(0,obj.value.length-1);
+        //         alert("小数点后多于两位！");
+        //     }
+        // }
+    };
+    function checkAgain(obj,event)
+    {
+    	console.log(event);
+    	console.log(event.key);
+    	if (isNaN(obj.value)) {
+    		if(obj.value.length>1)
+    		{
+    			obj.value = obj.value.substr(0,obj.value.length-1);
+    		}
+    		else
+    		{
+    			obj.value =""
+    		}
+        }
+        if (obj != null) {
+            //检查小数点后是否对于两位
+            if (obj.value.toString().split(".").length > 1 && obj.value.toString().split(".")[1].length > 2) {
+                
+                obj.value = obj.value.substr(0,obj.value.length-1);
+                alert("小数点后多于两位！");
+            }
+        }
+    }
+    </script>
+</body>
+
+</html>

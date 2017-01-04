@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>reg的正则表达式</title>
+    <meta name="author" content="" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+</head>
+
+<body>
+    <h1>reg的正则表达式</h1>
+    <p><span>只能输入正数（含小数）</span>
+        <input type="text" onkeyup="value=value.replace(/[^\d\.]/g,'')">
+    </p>
+    <p><span>只能输入数字(含负数和小数)</span>
+        <input type="text" onkeyup="value=value.replace(/[^\-\d.]/g,'')">
+    </p>
+    <p><span>能控制小数点后的位数最多为2位</span>
+        <input type="text" name="name" value="" onkeydown="checkNum(this)" />
+    </p>
+    <script type="text/javascript">
+    function checkNum(obj) {
+        //检查是否是非数字值
+        if (isNaN(obj.value)) {
+            obj.value = obj.value.substr(0,obj.value.length-1);
+        }
+        if (obj != null) {
+            //检查小数点后是否对于两位
+            if (obj.value.toString().split(".").length > 1 && obj.value.toString().split(".")[1].length > 2) {
+                
+                obj.value = obj.value.substr(0,obj.value.length-1);
+                alert("小数点后多于两位！");
+            }
+        }
+    };
+    </script>
+</body>
+
+</html>
