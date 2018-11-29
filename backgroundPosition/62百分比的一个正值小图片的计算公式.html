@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+  <meta charset="utf-8" />
+  <title>background-repeat_CSS参考手册_web前端开发参考手册系列</title>
+  <meta name="author" content="Joy Du(飘零雾雨), dooyoe@gmail.com, www.doyoe.com" />
+  <style>
+    .test {
+      width: 312px;
+      height: 218px;
+      background: transparent url(9宫格.png) no-repeat scroll 50% 50%;
+      border: 5px solid green;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <p>1.原点位置，即外层块元素的左上角</p>
+    <p> 2.background-position 位置设定是指图片与坐标原点的偏移量</p>
+    <p>3.原点是不会动的，移动的是图片 X坐标为正则图片左上角向右平移，为负则图片左上角向左平移</p>
+    <p> 4.Y坐标为正则图片左上角向下平移，为负则左上角向上平移</p>
+    <p>5.百分比的计算是有公式的：X轴( container宽度 – 图片宽度 )*含符号百分比 </p>
+    <p>6.Y轴( container高度 – 图片高度)*含符号百分比</p>
+  </div>
+  <div class="test">
+  </div>
+  <div>
+    <p> 等同于x：{容器(container)的宽度—背景图片的宽度}*x百分比，超出的部分隐藏。(312-212)*50%=50</p>
+    <p>等同于y：{容器(container)的高度—背景图片的高度}*y百分比，超出的部分隐藏。(218-118)*50%=50</p>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  选择图片：
+  <input id="img" type="file" />
+  <br/>
+  <input type="button" id="start" value="开始转换!">
+  <div> 预览：
+    <img id="imgShow" src="" />
+  </div>
+  <b>Base64数据：</b>
+  <textarea id="conte" style='height:150px;width:540px;'></textarea>
+  <input type="button" id="cpData" value="复制">
+  <div id="succ"></div>
+  <div id="len">数据长度：</div>
+    <script>  
+      var img = document.getElementById('img');
+      var imgShow = document.getElementById('imgShow');
+      var conte = document.getElementById('conte');
+      var len = document.getElementById('len');
+      var start = document.getElementById('start');
+      var cpData = document.getElementById('cpData');
+
+      cpData.addEventListener('click', cpDataF);
+      start.addEventListener('click', startt);
+
+      /*转换函数*/
+      function startt() {
+        var imgFile = new FileReader();
+        imgFile.readAsDataURL(img.files[0]);
+        imgFile.onload = function () {
+          var imgData = this.result; //base64数据    
+          imgShow.setAttribute('src', imgData);
+          conte.value = imgData;
+          len.innerHTML += imgData.length;
+        }
+      }
+
+      /*复制数据*/
+      function cpDataF() {
+        conte.select(); // 选择对象    
+        var cpd = document.execCommand("Copy"); // 执行浏览器复制命令    
+        cpd ? document.getElementById('succ').innerHTML = '复制成功' : console.warn('复制失败');
+        window.setTimeout(function () {
+          document.getElementById('succ').innerHTML = '';
+        }, 1000)
+      }  
+    </script>
+</body>
+
+</html>

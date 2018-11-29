@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>打印功能</title>
+    <script language="javascript" src="optimize.js"></script>
+    <!--<object  id="LODOP_OB" classid="clsid:2105C259-1E0C-4534-8141-A753534CB4CA" width=0 height=0>-->
+        <!--<embed id="LODOP_EM" type="application/x-print-lodop" width=0 height=0></embed>-->
+    <!--</object>-->
+</head>
+<body>
+    <table class="tableframe2" style="WORD-BREAK:break-all;width:97%;align:center" id="form1">
+        <tbody>
+        <tr id="id1" style="BACKGROUND-COLOR: #dae2ed">
+            <td  align="middle" width="4%" height="25" bgcolor="#C0C0C0"></td>
+            <td  align="center" width="15%" height="25" bgcolor="#C0C0C0">
+                <p align="center"><b>商品编号</b></p>
+            </td>
+            <td  align="center" width="31%" bgcolor="#C0C0C0"><b>商品名称</b></td>
+            <td  align="center" width="14%" bgcolor="#C0C0C0"><b>数量</b></td>
+            <td  align="center" width="15%" bgcolor="#C0C0C0"><b>单价(元)</b></td>
+        </tr>
+        <tr    style="BACKGROUND-COLOR: #dae2ed">
+            <td   width="4%" height="25"><input type="checkbox" id="CK1" value="ON" checked onClick="ReSumMoney()"></td>
+            <td   width="15%" height="25"><input type="text" id="BH1" value="001" style="text-align:center;border:0px;background-color:#dae2ed" ></td>
+            <td  align="center" width="31%"><input type="text" id="MC1" value="商品A" style="text-align:center;border:0px;background-color:#dae2ed" ></td>
+            <td  align="center" width="14%"><input type="text" id="SL1" value="1.00" style="text-align:center;border:0px;background-color:#dae2ed" ></td>
+            <td  align="center" width="15%"><input type="text" id="DJ1" value="10.00" style="text-align:center;border:0px;background-color:#dae2ed" ></td>
+        </tr>
+        <tr style="BACKGROUND-COLOR: #dae2ed">
+            <td   width="4%" height="25"><input type="checkbox" id="CK2" value="ON" onClick="ReSumMoney()"></td>
+            <td   width="15%" height="25"><input type="text" id="BH2" value="002" style="text-align:center;border:0px;background-color:#dae2ed" ></td>
+            <td  align="center" width="31%"><input type="text" id="MC2" value="商品B" style="text-align:center;border:0px;background-color:#dae2ed" ></td>
+            <td  align="center" width="14%"><input type="text" id="SL2" value="1.00" style="text-align:center;border:0px;background-color:#dae2ed" ></td>
+            <td  align="center" width="15%"><input type="text" id="DJ2" value="20.00" style="text-align:center;border:0px;background-color:#dae2ed" ></td>
+        </tr>
+        <tr style="BACKGROUND-COLOR: #dae2ed">
+            <td   width="4%" height="25"><input type="checkbox" id="CK3" value="ON" checked onClick="ReSumMoney()"></td>
+            <td   width="15%" height="25"><input type="text"    id="BH3" value="003" style="text-align:center;border:0px;background-color:#dae2ed" ></td>
+            <td  align="center" width="31%"><input type="text"  id="MC3" value="商品C" style="text-align:center;border:0px;background-color:#dae2ed" ></td>
+            <td  align="center" width="14%"><input type="text"  id="SL3" value="1.00" style="text-align:center;border:0px;background-color:#dae2ed" ></td>
+            <td  align="center" width="15%"><input type="text"  id="DJ3" value="70.00" style="text-align:center;border:0px;background-color:#dae2ed" ></td>
+        </tr>
+        <tr style="BACKGROUND-COLOR: #dae2ed">
+            <td   width="4%" height="25"><input type="checkbox" id="CK4" value="ON" checked onClick="ReSumMoney()"></td>
+            <td   width="15%" height="25"><input type="text"    id="BH4" value="004" style="text-align:center;border:0px;background-color:#dae2ed" ></td>
+            <td  align="center" width="31%"><input type="text"  id="MC4" value="商品D" style="text-align:center;border:0px;background-color:#dae2ed" ></td>
+            <td  align="center" width="14%"><input type="text"  id="SL4" value="1.00" style="text-align:center;border:0px;background-color:#dae2ed" ></td>
+            <td  align="center" width="15%"><input type="text"  id="DJ4" value="25.00" style="text-align:center;border:0px;background-color:#dae2ed" ></td>
+        </tr>
+        <tr style="BACKGROUND-COLOR: #dae2ed">
+            <td   width="4%" height="25"><input type="checkbox" id="CK5" value="ON" onClick="ReSumMoney()"></td>
+            <td   width="15%" height="25"><input type="text"    id="BH5" value="005" style="text-align:center;border:0px;background-color:#dae2ed" ></td>
+            <td  align="center" width="31%"><input type="text"  id="MC5" value="商品E" style="text-align:center;border:0px;background-color:#dae2ed" ></td>
+            <td  align="center" width="14%"><input type="text"  id="SL5" value="1.00" style="text-align:center;border:0px;background-color:#dae2ed" ></td>
+            <td  align="center" width="15%"><input type="text"  id="DJ5" value="40.00" style="text-align:center;border:0px;background-color:#dae2ed" ></td>
+        </tr>
+        <tr style="BACKGROUND-COLOR: #dae2ed">
+            <td   width="4%" height="25"><input type="checkbox" id="CK6" value="ON" onClick="ReSumMoney()"></td>
+            <td   width="15%" height="25"><input type="text"    id="BH6" value="006" style="text-align:center;border:0px;background-color:#dae2ed" ></td>
+            <td  align="center" width="31%"><input type="text"  id="MC6" value="商品F" style="text-align:center;border:0px;background-color:#dae2ed" ></td>
+            <td  align="center" width="14%"><input type="text"  id="SL6" value="1.00" style="text-align:center;border:0px;background-color:#dae2ed" ></td>
+            <td  align="center" width="15%"><input type="text"  id="DJ6" value="36.50" style="text-align:center;border:0px;background-color:#dae2ed" ></td>
+        </tr>
+        <tr style="BACKGROUND-COLOR: #dae2ed">
+            <td   width="4%" height="25"><input type="checkbox" id="CK7" value="ON" onClick="ReSumMoney()"></td>
+            <td   width="15%" height="25"><input type="text"    id="BH7" value="007" style="text-align:center;border:0px;background-color:#dae2ed" ></td>
+            <td  align="center" width="31%"><input type="text"  id="MC7" value="商品G" style="text-align:center;border:0px;background-color:#dae2ed" ></td>
+            <td  align="center" width="14%"><input type="text"  id="SL7" value="1.00" style="text-align:center;border:0px;background-color:#dae2ed" ></td>
+            <td  align="center" width="15%"><input type="text"  id="DJ7" value="60.00" style="text-align:center;border:0px;background-color:#dae2ed" ></td>
+        </tr>
+        </tbody>
+    </table>
+    <input type="button" value="打印预览" onClick="MyPreview()">
+</body>
+<script>
+    var LODOP; //声明为全局变量
+    function MyPreview() {
+        LODOP=getLodop();
+        LODOP.PRINT_INIT('打印table');
+        LODOP.SET_PRINT_PAGESIZE(2,0,0,"A4");
+        LODOP.ADD_PRINT_HTM(10,10,200,287,document.getElementById("form1").innerHTML);
+        LODOP.PREVIEW();
+    }
+
+
+</script>
+</html>

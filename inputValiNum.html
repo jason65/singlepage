@@ -1,0 +1,40 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"> 
+    <title></title>
+    <meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<script src="jquery1.11.1.min.js"></script>
+</head>
+<body>
+    <table>
+    	<tr>
+	    	<td><input type="text"class="valChange"></td>
+	    	<td><input type="text"class="valChange"></td>
+	    	<td><input type="text"class="valChange"></td>
+	    	<td><input type="text"class="valChange"></td>
+	    	<td><input type="text"class="valChange"></td>
+	    	<td><input type="text"class="valChange"></td>
+    	</tr>
+    </table>
+    <script>
+
+    	$('table').on('blur','.valChange',function () {
+    		var val=$(this).val();
+    		var reg1=/^\d{0,10}$|^\d{0,8}\.[0-9]?$|^\d{0,7}\.[0-9]{0,2}$|^$/;
+    		if(!reg1.test(val))
+    		{
+    			console.log('wrong');
+    			$(this).trigger('select');
+
+    		}
+
+
+    	});
+
+    </script>
+</body>
+</html>

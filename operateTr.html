@@ -1,0 +1,54 @@
+<!DOCTYPE html>  
+<html>  
+    <head>  
+        <meta http-equiv="Content-Type" content="text/htmt;charset=utf-8">  
+    </head>  
+  
+    <body>  
+        <table id="myTable" border="1">  
+            <tr>  
+                <td>  
+                    单元格   
+                </td>  
+                <td>  
+                    操作   
+                </td>  
+            </tr>  
+        </table>  
+        <br />  
+        <input type="button" onclick="insRow()" value="Insert row">
+		<script type="text/javascript">  
+        var i=0;   
+        function insRow(){   
+            var tbl = document.getElementById("myTable");
+			alert(tbl);
+			alert(tbl.rows.length)
+            insRowIndex(tbl.rows.length);   
+        }   
+        function insRowIndex(rowIndex){   
+            var tbl = document.getElementById("myTable");   
+            var row = tbl.insertRow(rowIndex);   
+            var cell0 = row.insertCell(0);   
+            var cell1 = row.insertCell(1);   
+            cell0.innerHTML = "cell " + i++;   
+            cell1.innerHTML = " <input type='button' value='delete' onclick='delRow(this)'>"  
+                                +"<input type='button' value='insBefore' onclick='insBefore(this)'>"   
+                                +"<input type='button' value='insAfter' onclick='insAfter(this)'>";   
+        }   
+        function delRow(row){   
+            var tbl = document.getElementById("myTable");   
+            var rowrowIndex =  row.parentNode.parentNode.rowIndex;   
+            tbl.deleteRow(rowIndex);   
+        }   
+        function insBefore(row){   
+            var rowrowIndex =  row.parentNode.parentNode.rowIndex;   
+            insRowIndex(rowIndex)   
+        }   
+        function insAfter(row){   
+            var rowrowIndex =  row.parentNode.parentNode.rowIndex;   
+            insRowIndex(rowIndex+1)   
+        }   
+</script>  
+    </body>  
+</html> 
+
